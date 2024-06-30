@@ -1,0 +1,2 @@
+Redis Pub-Sub, short for Publish-Subscribe, is a messaging pattern where message senders (publishers) distribute messages to multiple
+recipients (subscribers) without the need for direct communication between them using different channels that will listen to events.
