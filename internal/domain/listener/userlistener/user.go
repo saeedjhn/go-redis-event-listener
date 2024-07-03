@@ -43,7 +43,8 @@ func (l UserListener) Handler(ctx context.Context, queuePattern userevent.Queue)
 
 func (l UserListener) createdHandler(queueName string, message string) {
 	var u entity.User
-	err := l.ps.Unmarshal(message, &u)
+	err := l.ps.Decode(message, &u) // if usage ps.Encode method,
+
 	if err != nil {
 		fmt.Errorf("[%s] %v", queueName, err)
 	}
