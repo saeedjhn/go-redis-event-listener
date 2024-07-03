@@ -10,10 +10,10 @@ import (
 )
 
 type UserListener struct {
-	ps *pubsub.PubSub
+	ps *pubsub.RedisPubSub
 }
 
-func New(ps *pubsub.PubSub) *UserListener {
+func New(ps *pubsub.RedisPubSub) *UserListener {
 	return &UserListener{ps: ps}
 }
 

@@ -8,11 +8,11 @@ import (
 
 type UserEvent struct {
 	//publisher *pubsub.Publisher
-	pubSub *pubsub.PubSub
+	pubSub *pubsub.RedisPubSub
 }
 
 // func New(publisher *pubsub.Publisher) *UserEvent {
-func New(pubSub *pubsub.PubSub) *UserEvent {
+func New(pubSub *pubsub.RedisPubSub) *UserEvent {
 	return &UserEvent{pubSub: pubSub}
 }
 
