@@ -103,7 +103,7 @@ volumes:
   mysql:
   #  psql:
   #  mongodb-data:
-#  pgadmin:
+  #  pgadmin:
   redis:
   logs:
 

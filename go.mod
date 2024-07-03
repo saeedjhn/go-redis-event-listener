@@ -1,4 +1,4 @@
-module github.com/saeedjhn/go-redis-pubsub-message-broker
+module github.com/saeedjhn/go-redis-event-listener
 
 go 1.22.3
 
@@ -6,7 +6,6 @@ require (
 	github.com/go-sql-driver/mysql v1.8.1
 	github.com/redis/go-redis/v9 v9.5.3
 	github.com/rubenv/sql-migrate v1.6.1
-	github.com/saeedjhn/go-backend-clean-arch v0.0.0-20240627070246-1e95fdae8b75
 	github.com/spf13/viper v1.19.0
 	go.uber.org/zap v1.27.0
 )

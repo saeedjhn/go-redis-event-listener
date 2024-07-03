@@ -2,7 +2,7 @@ package pubsub
 
 import (
 	"context"
-	"github.com/saeedjhn/go-redis-pubsub-message-broker/internal/infrastructure/persistance/cache/redis"
+	"github.com/saeedjhn/go-redis-event-listener/internal/infrastructure/persistance/cache/redis"
 	"testing"
 )
 
@@ -22,5 +22,5 @@ func TestConsumer(t *testing.T) {
 
 	s := NewConsumer(r)
 
-	s.ConsumerMessages(context.Background(), []string{"Test"})
+	s.Consumer(context.Background(), []string{"Test"})
 }

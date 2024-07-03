@@ -7,9 +7,28 @@ http_server:
   port: 8000
   timeout: "5s"
 
+logger:
+  filename: "./logs/log.json"
+  max_size: 10
+  max_backups: 10
+  max_age: 30
+  local_time: true
+  compress: true
+
 mysql:
   host: go-backend-clean-arch_mysqldb
   PORT: 3306
+  username: admin
+  password: 123456
+  database: backend_db
+  ssl_mode: disable
+  max_idle_conns: 15
+  max_open_conns: 100
+  conn_max_life_time: 5
+
+postgres:
+  host: go-backend-clean-arch_psqldb
+  port: 5432
   username: admin
   password: 123456
   database: backend_db
@@ -29,3 +48,11 @@ redis:
   pool_size: 10
   pool_timeout: 15
   idle_check_frequency: 500
+
+auth:
+  access_secret: "MYSECRETKEY"
+  refresh_secret: "MYSECRETKEY"
+  access_subject: "as"
+  refresh_subject: "rs"
+  access_token_expire_duration: "7h"
+  refresh_token_expire_duration: "120h"

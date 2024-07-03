@@ -9,6 +9,9 @@ type DB interface {
 	Client() *redis.Client
 }
 
+type PubSub *redis.PubSub
+type Message <-chan *redis.Message
+
 type RedisDB struct {
 	config Config
 	db     *redis.Client

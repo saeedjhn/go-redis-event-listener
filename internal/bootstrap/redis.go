@@ -1,7 +1,7 @@
 package bootstrap
 
 import (
-	"github.com/saeedjhn/go-redis-pubsub-message-broker/internal/infrastructure/persistance/cache/redis"
+	"github.com/saeedjhn/go-redis-event-listener/internal/infrastructure/persistance/cache/redis"
 	"log"
 )
 

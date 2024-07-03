@@ -1,8 +1,10 @@
 package configs
 
 import (
-	"github.com/saeedjhn/go-redis-pubsub-message-broker/internal/infrastructure/persistance/cache/redis"
-	"github.com/saeedjhn/go-redis-pubsub-message-broker/internal/infrastructure/persistance/db/mysql"
+	"github.com/saeedjhn/go-redis-event-listener/internal/infrastructure/logger"
+	"github.com/saeedjhn/go-redis-event-listener/internal/infrastructure/persistance/cache/redis"
+	"github.com/saeedjhn/go-redis-event-listener/internal/infrastructure/persistance/db/mysql"
+	"github.com/saeedjhn/go-redis-event-listener/internal/service/authservice"
 	"time"
 )
 
@@ -23,8 +25,10 @@ type HTTPServer struct {
 }
 
 type Config struct {
-	Application Application  `mapstructure:"application"`
-	HTTPServer  HTTPServer   `mapstructure:"http_server"`
-	Mysql       mysql.Config `mapstructure:"mysql"`
-	Redis       redis.Config `mapstructure:"redis"`
+	Application Application        `mapstructure:"application"`
+	HTTPServer  HTTPServer         `mapstructure:"http_server"`
+	Logger      logger.Config      `mapstructure:"logger"`
+	Mysql       mysql.Config       `mapstructure:"mysql"`
+	Redis       redis.Config       `mapstructure:"redis"`
+	Auth        authservice.Config `mapstructure:"auth"`
 }

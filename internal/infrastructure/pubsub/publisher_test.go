@@ -2,7 +2,7 @@ package pubsub
 
 import (
 	"context"
-	"github.com/saeedjhn/go-redis-pubsub-message-broker/internal/infrastructure/persistance/cache/redis"
+	"github.com/saeedjhn/go-redis-event-listener/internal/infrastructure/persistance/cache/redis"
 	"log"
 	"testing"
 )
@@ -24,9 +24,9 @@ func TestPublish(t *testing.T) {
 	pub := NewPublisher(r)
 
 	q := "test"
-	m := "message for test"
+	m := "Message for test"
 
-	pub.PublishMessages(context.Background(), m, q)
+	pub.Publish(context.Background(), m, q)
 
-	log.Println("publish message on channel successful")
+	log.Println("publish Message on channel successful")
 }
