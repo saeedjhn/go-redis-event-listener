@@ -1,13 +1,15 @@
 package listener
 
-import "github.com/saeedjhn/go-redis-event-listener/internal/infrastructure/persistance/cache/redis"
+import (
+	"github.com/saeedjhn/go-redis-event-listener/internal/infrastructure/pubsub"
+)
 
 type Listener struct {
-	client redis.DB
+	ps pubsub.PubSub
 }
 
-func New(client redis.DB) *Listener {
-	return &Listener{client: client}
+func New(ps pubsub.PubSub) *Listener {
+	return &Listener{ps: ps}
 }
 
 func (l Listener) SetupListeners() {

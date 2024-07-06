@@ -7,12 +7,10 @@ import (
 )
 
 type UserEvent struct {
-	//publisher *pubsub.Publisher
-	pubSub *pubsub.RedisPubSub
+	pubSub pubsub.PubSub
 }
 
-// func New(publisher *pubsub.Publisher) *UserEvent {
-func New(pubSub *pubsub.RedisPubSub) *UserEvent {
+func New(pubSub pubsub.PubSub) *UserEvent {
 	return &UserEvent{pubSub: pubSub}
 }
 

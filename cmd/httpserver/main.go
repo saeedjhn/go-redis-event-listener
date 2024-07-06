@@ -30,11 +30,13 @@ func main() {
 	}()
 
 	go func() {
-		log.Println("Listener is running")
+		log.Println("Listen to running events")
+		
+		ctx := context.Background()
 		ps := pubsub.New(app.RedisClient)
 
-		ul := userlistener.New(ps)
-		ul.Handler(context.Background(), userevent.QueuePattern)
+		// Define all listener
+		userlistener.New(ps).Handler(ctx, userevent.QueuePattern)
 	}()
 
 	quit := make(chan os.Signal, 1)

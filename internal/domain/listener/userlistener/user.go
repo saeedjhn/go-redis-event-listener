@@ -10,10 +10,10 @@ import (
 )
 
 type UserListener struct {
-	ps *pubsub.RedisPubSub
+	ps pubsub.PubSub
 }
 
-func New(ps *pubsub.RedisPubSub) *UserListener {
+func New(ps pubsub.PubSub) *UserListener {
 	return &UserListener{ps: ps}
 }
 
@@ -25,6 +25,7 @@ func (l UserListener) Handler(ctx context.Context, queuePattern userevent.Queue)
 	// Or just usage from below line
 	//channel := l.ps.PSubscribeMessages(ctx, string(queuePattern))
 
+	// Define queueName & xHandler
 	for msg := range channel {
 		switch userevent.Event(msg.Channel) {
 		case userevent.UserCreated:
